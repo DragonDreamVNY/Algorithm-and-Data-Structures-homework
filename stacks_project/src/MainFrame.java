@@ -5,13 +5,13 @@ import java.util.*;
 import java.lang.*;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author DragonDream
  */
 public class MainFrame extends javax.swing.JFrame {
-    
-
+   LinkedStack link = new LinkedStack(); 
     
     /**
      * Creates new form Stacks_ui
@@ -19,14 +19,30 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         
-        Stack<String> stack = new Stack<String>();
-        stack.push("bottom");
-        printStack(stack);
+        System.out.println("MainFrame.<init>()");
+        Stack<String> link = new Stack<String>();
+        link.push("bottom");
+        printStack(link);
         
-        stack.push("next");
-        printStack(stack);
+        link.push("next");
+        printStack(link);
+        
+        //statusTextArea.setText("File created: " + pathToFile.toAbsolutePath());
+        
+        
+        /*
+        LinkedStack link = new LinkedStack();
+        //Stack<String> link = new Stack<String>();
+        link.push("bottom");
+        printStack(link);
+        
+        link.push("next");
+        printStack(link);
+        
+        */
         
     } // end main
+    
     
     
     private static void printStack(Stack<String> s){
@@ -65,7 +81,6 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jta = new java.awt.TextArea();
         jPanel1 = new javax.swing.JPanel();
         studID_txtF = new javax.swing.JTextField();
         fName_txtF = new javax.swing.JTextField();
@@ -78,6 +93,7 @@ public class MainFrame extends javax.swing.JFrame {
         insTop_Btn = new javax.swing.JButton();
         delALL_Btn = new javax.swing.JButton();
         remTop_Btn = new javax.swing.JButton();
+        checkTopData_Btn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         sub_txtF1 = new javax.swing.JTextField();
         sub_txtF2 = new javax.swing.JTextField();
@@ -90,6 +106,8 @@ public class MainFrame extends javax.swing.JFrame {
         countItems_label = new javax.swing.JLabel();
         nodeItem_txtFd = new javax.swing.JTextField();
         stackCounter_txtFd = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        statusTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -99,6 +117,11 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         studID_txtF.setText("studID");
+        studID_txtF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studID_txtFActionPerformed(evt);
+            }
+        });
 
         fName_txtF.setText("fName");
 
@@ -124,13 +147,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(studID_txtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fName_txtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lastN_txtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(age_txtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(age_txtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         checkEmpty_Btn.setText("Check if Empty");
@@ -143,6 +165,11 @@ public class MainFrame extends javax.swing.JFrame {
         searchName_Btn.setText("Search by Name");
 
         print_Btn.setText("Print Contents");
+        print_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                print_BtnActionPerformed(evt);
+            }
+        });
 
         insTop_Btn.setText("Insert TOP");
         insTop_Btn.addActionListener(new java.awt.event.ActionListener() {
@@ -160,45 +187,62 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        checkTopData_Btn.setText("Check Top");
+        checkTopData_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTopData_BtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(searchName_Btn))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchName_Btn)
+                            .addComponent(checkTopData_Btn)
                             .addComponent(checkEmpty_Btn))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(insTop_Btn))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(remTop_Btn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(delALL_Btn))))
+                        .addGap(5, 5, 5)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(insTop_Btn)
+                            .addComponent(remTop_Btn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(delALL_Btn))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(print_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkEmpty_Btn)
-                    .addComponent(remTop_Btn)
-                    .addComponent(delALL_Btn))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(checkEmpty_Btn)
+                            .addComponent(delALL_Btn)
+                            .addComponent(insTop_Btn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(checkTopData_Btn))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(remTop_Btn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchName_Btn)
-                    .addComponent(insTop_Btn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(print_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(print_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(searchName_Btn)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -253,7 +297,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(sub_txtF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sub_txtF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sub_txtF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         displayRecord_txtLabel.setText("Display Records for current Student");
@@ -263,6 +307,11 @@ public class MainFrame extends javax.swing.JFrame {
         nodeItem_txtFd.setText("Node");
 
         stackCounter_txtFd.setText("count");
+        stackCounter_txtFd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stackCounter_txtFdActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -282,45 +331,54 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nodeItem_txtFd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(displayRecord_txtLabel))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stackCounter_txtFd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(countItems_label))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(countItems_label)
+                    .addComponent(stackCounter_txtFd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        statusTextArea.setColumns(20);
+        statusTextArea.setRows(5);
+        jScrollPane1.setViewportView(statusTextArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jta, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 21, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jta, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         pack();
@@ -328,6 +386,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void remTop_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remTop_BtnActionPerformed
         // TODO add your handling code here:
+        link.pop();
+        statusTextArea.setText("Top node removed from Stack at : ");
     }//GEN-LAST:event_remTop_BtnActionPerformed
 
     private void sub_txtF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub_txtF4ActionPerformed
@@ -340,7 +400,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void insTop_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insTop_BtnActionPerformed
         // inserts new Node (data contains Student Object which is an arrayList) on top of Stack
-        // first enter new Data to Student Class
+        // enter new Data to Student Class
         String studIdInput = JOptionPane.showInputDialog("enter Student ID");
             int studIdIn = Integer.parseInt(studIdInput);
             System.out.println("You've entered Student ID : " + studIdInput);
@@ -351,7 +411,7 @@ public class MainFrame extends javax.swing.JFrame {
         String lNameInput = JOptionPane.showInputDialog("enter Last Name");
             System.out.println("You've entered Last Name : " + lNameInput);
             
-        String ageInput = JOptionPane.showInputDialog("enter First Name");
+        String ageInput = JOptionPane.showInputDialog("enter age");
             int ageIn = Integer.parseInt(ageInput);
             System.out.println("You've entered Age : " + ageIn);
             
@@ -359,41 +419,76 @@ public class MainFrame extends javax.swing.JFrame {
             int gradeIn1 = Integer.parseInt(gradeInput1);
             System.out.println("You've entered Grade 1 : " + gradeIn1);  
             
-        String gradeInput2 = JOptionPane.showInputDialog("enter results for Exam 1");
+        String gradeInput2 = JOptionPane.showInputDialog("enter results for Exam 2");
             int gradeIn2 = Integer.parseInt(gradeInput2);
             System.out.println("You've entered Grade 2 : " + gradeInput2);
             
-        String gradeInput3 = JOptionPane.showInputDialog("enter results for Exam 1");
+        String gradeInput3 = JOptionPane.showInputDialog("enter results for Exam 3");
             int gradeIn3 = Integer.parseInt(gradeInput3);
             System.out.println("You've entered Grade 3 : " + gradeIn3);
          
-        String gradeInput4 = JOptionPane.showInputDialog("enter results for Exam 1");
+        String gradeInput4 = JOptionPane.showInputDialog("enter results for Exam 4");
             int gradeIn4 = Integer.parseInt(gradeInput4);
             System.out.println("You've entered Grade 4 : " + gradeIn4);
             
-        String gradeInput5 = JOptionPane.showInputDialog("enter results for Exam 1");
+        String gradeInput5 = JOptionPane.showInputDialog("enter results for Exam 5");
             int gradeIn5 = Integer.parseInt(gradeInput5);
             System.out.println("You've entered Grade 5 : " + gradeIn5);
             
-        String gradeInput6 = JOptionPane.showInputDialog("enter results for Exam 1");
+        String gradeInput6 = JOptionPane.showInputDialog("enter results for Exam 6");
             int gradeIn6 = Integer.parseInt(gradeInput6);
             System.out.println("You've entered Grade 6 : " + gradeIn6);
         //create new Student Object
         Student newStudentElement = new Student(studIdIn, fNameInput, lNameInput, ageIn, gradeIn1, gradeIn2, gradeIn3, gradeIn4, gradeIn5, gradeIn6 );
+        
+        //insert the new student Data onto the Stack, which makes a new Node (objectData or element, next position)
+        link.push(newStudentElement); 
     }//GEN-LAST:event_insTop_BtnActionPerformed
 
     private void checkEmpty_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkEmpty_BtnActionPerformed
         // CHECK if stack is empty
         // to call a non static method from another (not private) class in same package
         // ref: http://stackoverflow.com/questions/31086487/i-want-to-call-a-method-from-another-class-but-in-same-package-or-file-how-to-do
-        LinkedStack link = new LinkedStack();
-        link.isEmpty();    
+        // LinkedStack class is called as a global within the top of this MainFrame class
+        
+        statusTextArea.setText("Stack is Empty: " + link.isEmpty() ); //return Boolean true for empty
     }//GEN-LAST:event_checkEmpty_BtnActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // when the Form is closed, exit
         System.exit(0);
     }//GEN-LAST:event_formWindowClosed
+
+    private void stackCounter_txtFdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stackCounter_txtFdActionPerformed
+        // report Current size of Stack:
+        stackCounter_txtFd.setText( Integer.toString(link.size()) ); //convert int 'size' from LinkedStack to String
+        System.out.println("current stack size : " + link.size());
+    }//GEN-LAST:event_stackCounter_txtFdActionPerformed
+
+    private void studID_txtFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studID_txtFActionPerformed
+        // DISPLAY current Student's ID:
+        //String studIDdisplay = Student.toString();
+        //studID_txtF.setText();
+    }//GEN-LAST:event_studID_txtFActionPerformed
+
+    private void print_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_BtnActionPerformed
+        // TODO Print all contents of stack, one student per line:
+        
+        /*
+        ListIterator<String> listIterator = link.listIterator(link.size());
+        while (listIterator.hasPrevious()) {
+            System.out.println(listIterator.previous());
+        }
+        */
+        
+        System.out.println(link.toString());
+        
+    }//GEN-LAST:event_print_BtnActionPerformed
+
+    private void checkTopData_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTopData_BtnActionPerformed
+        // TODO add your handling code here:
+        statusTextArea.setText( link.peek().toString() );
+    }//GEN-LAST:event_checkTopData_BtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -436,6 +531,7 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age_txtF;
     private javax.swing.JButton checkEmpty_Btn;
+    private javax.swing.JButton checkTopData_Btn;
     private javax.swing.JLabel countItems_label;
     private javax.swing.JButton delALL_Btn;
     private javax.swing.JLabel displayRecord_txtLabel;
@@ -445,13 +541,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private java.awt.TextArea jta;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lastN_txtF;
     private javax.swing.JTextField nodeItem_txtFd;
     private javax.swing.JButton print_Btn;
     private javax.swing.JButton remTop_Btn;
     private javax.swing.JButton searchName_Btn;
     private javax.swing.JTextField stackCounter_txtFd;
+    private javax.swing.JTextArea statusTextArea;
     private javax.swing.JTextField studID_txtF;
     private javax.swing.JTextField sub_txtF1;
     private javax.swing.JTextField sub_txtF2;

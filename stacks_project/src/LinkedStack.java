@@ -9,12 +9,13 @@
  * @author DragonDream
  * Ref: http://algs4.cs.princeton.edu/13stacks/LinkedStack.java.html
  * Ref: https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html 
+ * Ref: theory and usage: http://introcs.cs.princeton.edu/java/43stack/
 
 */
 
 public class LinkedStack {
     private Node top;         // reference to the top node on the stack LIFO
-    private int size;      // number of elements in/size of the stack
+    int size;      // number of elements in/size of the stack
     
     public LinkedStack( ) { // Initialize empty stack
         top = null;
@@ -22,11 +23,13 @@ public class LinkedStack {
         
     }
 
-  
+    //public String stackSize = String.valueOf(size);
+    //System.out.print(size);
     
     public int size( ) {              
 	// Returns the current stack size
         return size;
+        
     }
     
      public boolean isEmpty() {       
@@ -37,36 +40,35 @@ public class LinkedStack {
             return false;
     }
      
-    public Object top( ) {  // Return the top stack element
-        if (isEmpty( )) { System.out.println("Stack is empty."); }
-        
-	return top.getData( );
+    public Object peek( ) {  // Return the top stack element
+        if (isEmpty()) { 
+            System.out.println("Stack is empty."); 
+        }
+	return top.getData();
     }
     
-    public void push(Object obj) {   
+    public void push(Object studentObject) {   
     // Push a new object on top of the stack
-        Node nodePlus = new Node( );
-        nodePlus.setData(obj);
-        nodePlus.setNext(top);
-        top = nodePlus;
-        size++;
+        Node newFirst = new Node( ); //create a new Node object for the top
+        newFirst.setData(studentObject);
+        newFirst.setNext(top);
+        top = newFirst; //top or first is now this Node's
+        size++; //increase count or size of stack
     }
 
     public Object pop( ) {   
     // Pop off the top stack element
-        Object temp;
-        if (isEmpty( ))
-        {    System.out.println("Stack is empty.");		}
-        temp = top.getData( );
-        top = top.getNext( );       // adjust the top node
+        Object oldFirst;
+        if (isEmpty( )) {    
+            System.out.println("Stack is empty."); 
+            return null;
+        }
+        oldFirst = top.getData( );
+        top = top.getNext( ); // adjust the top node, first node is assigned to the next node. oldFirst is garbage
         size--;
-        return temp;
+        return oldFirst;
     }
     
-    
-
-    
-
-    
+    public Object traverseObject;
     
 }//end LinkedStack class

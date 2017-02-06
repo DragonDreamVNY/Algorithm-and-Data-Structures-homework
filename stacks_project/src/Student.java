@@ -19,7 +19,7 @@ public class Student {
     private int grade6;
     
     /*--- setters student Data---*/
-    /*
+    
     public void setID(int newID){ this.studID = newID; }
     public void setfName(String newfirstName){ this.fName = newfirstName; }   
     public void setlName(String newlastName){ this.lName = newlastName; }  
@@ -30,7 +30,7 @@ public class Student {
     public void setGrade4(int newGrade4){ this.grade1 = newGrade4; }
     public void setGrade5(int newGrade5){ this.grade2 = newGrade5; }
     public void setGrade6(int newGrade6){ this.grade3 = newGrade6; }
-    */
+    
     
     /*--- getters student Data---*/
     public int getID(){ return studID; } 
@@ -60,7 +60,7 @@ public class Student {
    }//with default values for new object instances
 */   
     
-/*    
+   
     // constructor with setter
     public Student(int studentID, String firstName, String lastName, int someAge, int someGrade1, int someGrade2, int someGrade3, int someGrade4, int someGrade5, int someGrade6){
         this.studID = studentID;
@@ -74,15 +74,23 @@ public class Student {
         this.grade5 = someGrade5;
         this.grade6 = someGrade6;
     }
-*/    
     
-
+    @Override 
+    public String toString(){
+        return "ID: " + this.studID + "\t Name: " + this.fName + " " + this.lName + "\t" + "age: " + this.age
+                + "\n" + this.grade1 + "\t" + this.grade2 + "\t" + this.grade3 + "\t" + this.grade4 + "\t" + this.grade5 + "\t" +this.grade6;
+    }
+    
+/*
     // constructor methods have same name as Class : student is not the same as Student/ get params from input
     public Student(int studentID, String firstName, String lastName, int someAge, int someGrade1, int someGrade2, int someGrade3, int someGrade4, int someGrade5, int someGrade6) {
         // create an array list ( dynamic size, and index starts at 0 )
-        ArrayList studentList = new ArrayList(); // Could set an initial capacity here inside (), although don't have to, as arrayList is dynamic
-        System.out.println("Initial size of al: " + studentList.size());
+        
+        
 
+        ArrayList studentList = new ArrayList(); // Could set an initial capacity here inside (), although don't have to, as arrayList is dynamic
+        System.out.println("Initial size of arrayList: " + studentList.size());
+        
         // add elements to the array list. Capacity increases automatically to match the increasing size of arrayList
         studentList.add(studentID);  
         studentList.add(firstName);
@@ -99,8 +107,8 @@ public class Student {
         // display the array list
         System.out.println("Contents of array List: " + studentList);
 
-    }//end arrayList creation method
-    
+    }//end constructor method
+*/  
 // Ref: https://www.tutorialspoint.com/java/java_arraylist_class.htm
 // http://stackoverflow.com/questions/8896758/initial-size-for-the-arraylist
 

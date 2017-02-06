@@ -5,13 +5,14 @@
  * @author DragonDream
  */
 //ref: https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html
+// ref: http://www.datadisk.co.uk/html_docs/java/data_structures.htm
 public class Node {
-    private Object data;  // element stored in this node
+    private Object data;  // element stored in this node, many examples use String or int
     private Node next; // reference to the next node in the list
 
    // Notes: constructor method
    // Node(Object e, Node n) { 
-   //   element =e; 
+   //   element = e; 
    //   next = n; 
    // }
     
@@ -19,10 +20,10 @@ public class Node {
     public Node() { }     
     
     // newStudentElement is the new Student Object which contains an arrayList (phew!) 
-    // MainFrame insert gves 10 input dialogs -> Student Class, creates new Student called newS -> 
-    public Node(Object newStudentElement, Node nextNode) { 
-        data = newStudentElement;
-        next = nextNode;
+    // MainFrame insert gves 10 input dialogs -> Student Class, creates new Student instant -> 
+    public Node(Object newStudentData, Node newFirst) { 
+        data = newStudentData;
+        next = newFirst;
     }  
     
     
