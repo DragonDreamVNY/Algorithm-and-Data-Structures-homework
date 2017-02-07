@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author DragonDream
+ * @author k00223361 Vincent Lee
  */
 public class Student {
     // params
@@ -77,8 +77,8 @@ public class Student {
     
     @Override 
     public String toString(){
-        return "ID: " + this.studID + "\t Name: " + this.fName + " " + this.lName + "\t" + "age: " + this.age
-                + "\n" + this.grade1 + "\t" + this.grade2 + "\t" + this.grade3 + "\t" + this.grade4 + "\t" + this.grade5 + "\t" +this.grade6;
+        return "\nID: " + this.studID + "\t Name: " + this.fName + " " + this.lName + "\t" + "age: " + this.age
+                + "\n" + this.grade1 + "\t" + this.grade2 + "\t" + this.grade3 + "\t" + this.grade4 + "\t" + this.grade5 + "\t" +this.grade6 +"\n";
     }
     
 /*

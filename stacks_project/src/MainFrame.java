@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author DragonDream
+ * @author k00223361 Vincent Lee
  */
 public class MainFrame extends javax.swing.JFrame {
    LinkedStack link = new LinkedStack(); 
@@ -22,48 +22,6 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         
         System.out.println("MainFrame.<init>()");
-        
-        /*
-        Stack<String> link = new Stack<String>();
-        link.push("bottom");
-        printStack(link);
-        
-        link.push("next");
-        printStack(link);
-        */
-        //statusTextArea.setText("File created: " + pathToFile.toAbsolutePath());
-        
-        
-        /*
-        LinkedStack link = new LinkedStack();
-        //Stack<String> link = new Stack<String>();
-        link.push("bottom");
-        printStack(link);
-        
-        link.push("next");
-        printStack(link);
-        
-        */
-        
-        stackCounter_txtFd.setText( Integer.toString(link.size()) ); //convert int 'size' from LinkedStack to String
-        System.out.println("current stack size : " + link.size());
-        
-        
-    } // end main
-    
-        
-    
-    private static void printStack(){
-        // move this to linkedStack class
-        
-        /*
-        if(s.isEmpty()){  
-            System.out.println("you've nothing in your stack");
-        } 
-        else { 
-            System.out.printf("%s TOP\n", s); 
-        }
-        */
         
         /* Notes:
         %s means it will print a string, 
@@ -77,12 +35,11 @@ public class MainFrame extends javax.swing.JFrame {
         System.out.printf("%s\t%c\n%d\t%f\n", a, b, c, d); 
         also \t put a tabulator and \n make a new line.﻿
         */  
-    } // end printStack
-    
-
-    
-    
-    
+        
+        stackCounter_txtFd.setText( Integer.toString(link.size()) ); //convert int 'size' from LinkedStack to String
+        System.out.println("current stack size : " + link.size());
+ 
+    } // end main
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -173,6 +130,11 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         searchName_Btn.setText("Search by Name");
+        searchName_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchName_BtnActionPerformed(evt);
+            }
+        });
 
         print_Btn.setText("Print Contents");
         print_Btn.addActionListener(new java.awt.event.ActionListener() {
@@ -352,12 +314,11 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(20, 20, 20)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -372,14 +333,14 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
+                        .addGap(19, 19, 19)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,7 +357,7 @@ public class MainFrame extends javax.swing.JFrame {
         link.pop();
         statusTextArea.setText("POP! Top node removed from Stack ");
         JOptionPane.showMessageDialog(null, "Student data removed from stack", "Data Removed", JOptionPane.INFORMATION_MESSAGE);
-
+        stackCounter_txtFd.setText( Integer.toString(link.size()) ); //update counter status field
     }//GEN-LAST:event_remTop_BtnActionPerformed
 
     private void sub_txtF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub_txtF4ActionPerformed
@@ -476,7 +437,7 @@ public class MainFrame extends javax.swing.JFrame {
         // ref: http://stackoverflow.com/questions/31086487/i-want-to-call-a-method-from-another-class-but-in-same-package-or-file-how-to-do
         // LinkedStack class is called as a global within the top of this MainFrame class
         
-        
+        // message dialog if stack is empty
         if (link.size == 0){
             JOptionPane.showMessageDialog(null, "Stack is Empty", "No Student Data Found", JOptionPane.INFORMATION_MESSAGE);
             statusTextArea.setText("Stack is Empty: " + link.isEmpty() ); //return Boolean true for empty
@@ -514,18 +475,29 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println(listIterator.previous());
         }
         */
-        
-        System.out.println(link.toString());
-        
+        if (link.size == 0){
+            JOptionPane.showMessageDialog(null, "Stack is Empty", "No Student Data Found", JOptionPane.INFORMATION_MESSAGE);
+            statusTextArea.setText("Stack is Empty: " + link.isEmpty() ); //return Boolean true for empty
+        }
+        else{
+            statusTextArea.setText( link.printStack() );
+            //System.out.println(link.toString());
+        }
     }//GEN-LAST:event_print_BtnActionPerformed
 
     private void checkTopData_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTopData_BtnActionPerformed
         // TODO add your handling code here:
-        statusTextArea.setText( link.peek().toString() );
-        
-        // update size counter
-        System.out.println("current stack size : " + link.size());
-        stackCounter_txtFd.setText( Integer.toString(link.size()) );
+        if (link.size == 0){
+            JOptionPane.showMessageDialog(null, "Stack is Empty", "No Student Data Found", JOptionPane.INFORMATION_MESSAGE);
+            statusTextArea.setText("Stack is Empty: " + link.isEmpty() ); //return Boolean true for empty
+        }
+         else{
+             statusTextArea.setText( link.peek().toString() );
+         }
+            // update size counter
+            System.out.println("current stack size : " + link.size());
+            stackCounter_txtFd.setText( Integer.toString(link.size()) );
+         
     }//GEN-LAST:event_checkTopData_BtnActionPerformed
 
     private void delALL_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delALL_BtnActionPerformed
@@ -538,9 +510,22 @@ public class MainFrame extends javax.swing.JFrame {
         if (selectedOption == JOptionPane.YES_OPTION) {
             link.clear();
             JOptionPane.showMessageDialog(null, "Stack is Empty", "CLEARED", JOptionPane.INFORMATION_MESSAGE);
-
+            stackCounter_txtFd.setText( Integer.toString(link.size()) );
         } 
     }//GEN-LAST:event_delALL_BtnActionPerformed
+
+    private void searchName_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchName_BtnActionPerformed
+        // User enters a Surname
+        // use toLowerCase or toUpperCase. 
+
+        String searchInp;
+        searchInp = (JOptionPane.showInputDialog(null, "Enter a surname").toUpperCase());
+        
+        // user input is tested in search Method in LinkedStack Class
+        link.searchStack(searchInp);
+            statusTextArea.setText( (link.searchStack(searchInp)));
+       
+    }//GEN-LAST:event_searchName_BtnActionPerformed
 
     /**
      * @param args the command line arguments
