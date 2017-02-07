@@ -19,17 +19,12 @@ public class LinkedStack {
     
     public LinkedStack( ) { // Initialize empty stack
         top = null;
-        size = 0;
-        
+        size = 0;     
     }
-
-    //public String stackSize = String.valueOf(size);
-    //System.out.print(size);
     
     public int size( ) {              
-	// Returns the current stack size
-        return size;
-        
+    // Returns the current stack size
+        return size;  
     }
     
      public boolean isEmpty() {       
@@ -69,6 +64,14 @@ public class LinkedStack {
         return oldFirst;
     }
     
-    public Object traverseObject;
+    public int getLength(){
+        int length = size;
+        return length;
+    }
+    
+    public void clear(){
+        top = null; //set the head or top reference to null
+        size = 0;
+    }
     
 }//end LinkedStack class

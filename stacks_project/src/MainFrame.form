@@ -29,42 +29,48 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jPanel2" min="-2" pref="438" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Component id="jScrollPane1" min="-2" pref="518" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="87" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="547" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="296" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="166" max="32767" attributes="0"/>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -81,7 +87,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="fName_txtF" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lastN_txtF" min="-2" max="-2" attributes="0"/>
+                  <Component id="lName_txtF" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="age_txtF" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace pref="51" max="32767" attributes="0"/>
@@ -95,7 +101,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="studID_txtF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="fName_txtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lastN_txtF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lName_txtF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="age_txtF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -116,7 +122,7 @@
             <Property name="text" type="java.lang.String" value="fName"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="lastN_txtF">
+        <Component class="javax.swing.JTextField" name="lName_txtF">
           <Properties>
             <Property name="text" type="java.lang.String" value="lastName"/>
           </Properties>
@@ -135,11 +141,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="searchName_Btn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="checkTopData_Btn" min="-2" max="-2" attributes="0"/>
@@ -147,54 +149,58 @@
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="searchName_Btn" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="insTop_Btn" min="-2" max="-2" attributes="0"/>
-                              <Component id="remTop_Btn" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="delALL_Btn" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="print_Btn" min="-2" pref="162" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="remTop_Btn" pref="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                          <Component id="delALL_Btn" min="-2" pref="128" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="insTop_Btn" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="111" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="checkEmpty_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="delALL_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="insTop_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="checkTopData_Btn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="remTop_Btn" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="checkEmpty_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="insTop_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="print_Btn" pref="76" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="searchName_Btn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="checkTopData_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="remTop_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="delALL_Btn" min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="print_Btn" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="searchName_Btn" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -223,7 +229,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="insTop_Btn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Insert TOP"/>
+            <Property name="text" type="java.lang.String" value="Insert Data to TOP"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insTop_BtnActionPerformed"/>
@@ -233,10 +239,13 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clear ALL ITEMS"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delALL_BtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="remTop_Btn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Remove TOP"/>
+            <Property name="text" type="java.lang.String" value="Remove Data fro TOP"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="remTop_BtnActionPerformed"/>
@@ -336,16 +345,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="stackCounter_txtFd" max="32767" attributes="0"/>
-                      <Component id="nodeItem_txtFd" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="stackCounter_txtFd" min="-2" pref="47" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="countItems_label" min="-2" max="-2" attributes="0"/>
-                      <Component id="displayRecord_txtLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="countItems_label" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -353,11 +356,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="nodeItem_txtFd" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="displayRecord_txtLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="countItems_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="stackCounter_txtFd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -367,25 +365,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="displayRecord_txtLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Display Records for current Student"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="countItems_label">
           <Properties>
             <Property name="text" type="java.lang.String" value="No. of Items in Stack"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nodeItem_txtFd">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Node"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="stackCounter_txtFd">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="count"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stackCounter_txtFdActionPerformed"/>
           </Events>
