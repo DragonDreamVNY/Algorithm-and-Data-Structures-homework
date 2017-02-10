@@ -403,7 +403,6 @@ public class MainFrame extends javax.swing.JFrame {
             int gradeIn3 = Integer.parseInt(gradeInput3);
             System.out.println("You've entered Grade 3 : " + gradeIn3);
             sub_txtF3.setText(gradeInput3);
-
             
         String gradeInput4 = JOptionPane.showInputDialog("enter results for Exam 4");
             int gradeIn4 = Integer.parseInt(gradeInput4);
@@ -442,12 +441,13 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Stack is Empty", "No Student Data Found", JOptionPane.INFORMATION_MESSAGE);
             statusTextArea.setText("Stack is Empty: " + link.isEmpty() ); //return Boolean true for empty
         }
-        
-        // show stack count 
-        System.out.println("current stack size : " + link.size());
-        stackCounter_txtFd.setText( Integer.toString(link.size()) );
-        statusTextArea.setText("current stack size: " + link.size() ); 
-
+        else{
+            // show stack count 
+            System.out.println("Stack with Student data found");
+            System.out.println("current stack size : " + link.size());
+            stackCounter_txtFd.setText( Integer.toString(link.size()) );
+            statusTextArea.setText("current stack size: " + link.size() ); 
+        }
     }//GEN-LAST:event_checkEmpty_BtnActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
@@ -521,10 +521,9 @@ public class MainFrame extends javax.swing.JFrame {
         String searchInp;
         searchInp = (JOptionPane.showInputDialog(null, "Enter a surname").toUpperCase());
         
-        // user input is tested in search Method in LinkedStack Class
-        link.searchStack(searchInp);
-            statusTextArea.setText( (link.searchStack(searchInp)));
-       
+        // user input is tested in searchStack method in LinkedStack Class
+        link.searchStack(searchInp); //returns result String of student Data for display
+        statusTextArea.setText( (link.searchStack(searchInp)));
     }//GEN-LAST:event_searchName_BtnActionPerformed
 
     /**

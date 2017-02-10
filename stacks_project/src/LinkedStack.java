@@ -92,7 +92,7 @@ public class LinkedStack {
                 System.out.println("Last Name is... "+ searchPtr.getData().getlName());
                 result = searchPtr.getData().toString(); //will return this to print Student Details
                 System.out.println("name found" + result);
-                return result;
+                return result; //for printing in MainFrame
             } 
             else {
                 System.err.println("no name found");
@@ -101,8 +101,6 @@ public class LinkedStack {
         } //end while 
         return result;
     }//end search
-    
-
 }//end LinkedStack class
 
 //notes for future Vinny
